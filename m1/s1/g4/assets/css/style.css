@@ -24,7 +24,6 @@ nav ul li{
     text-align: center;
     font-weight: bold;
     font-size: 0.8rem;
-    margin: 0.3rem;
 }
 li a{
     text-decoration: none;
@@ -46,9 +45,9 @@ header p{
 }
 /* MAIN */
 main{
-    border-style: solid;
-    border-width: 1px;
     margin: 0.8rem;
+    background-color: white;
+    box-shadow: 2px 2px 10px #797777;
 }
 #article1{
     margin: 0.8rem;
@@ -103,21 +102,68 @@ iframe{
     margin: 0.8rem;
 }
 h2{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     text-align: center;
+    font-weight: bold;
 }
+/* FORM */
 section{
     background-color: #e5e1e3;
     padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
 }
-/* FORM */
+fieldset input{
+    width: 9rem;
+    height: 1.3rem;
+    border-style:none;
+}
+fieldset button{
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: bold 0.8rem;
+    color: #fff;
+    padding: 0.1rem 0.5rem;
+    border: solid 1px #0076a3;
+    background: #3862c0;
+}
 
 /* ELEMENTI NELL' ASIDE */
+aside{
+    margin-bottom: 2rem;
+}
+aside div{
+    background-color: #e5e1e3;
+    padding: 1rem;
+    margin: 0.8rem;
+    border-style: solid;
+    border-color: #d4d6d7;
+    border-width: 1px;
+}
+aside div p,a{
+    margin: 0.5rem;
+}
+.date{
+    text-align: right;
+    margin-top: 1rem;
+}
+
 
 /* FOOTER */
+
 footer{
-    border-style: solid;
-    border-width: 1px;
     margin: 0.8rem;
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(180deg, #009ec3, #036c88);
+    box-shadow: 2px 2px 10px #797777;
+    color: white;
 }
+footer p,address{
+    font-size: 0.9rem;
+
+}
+
