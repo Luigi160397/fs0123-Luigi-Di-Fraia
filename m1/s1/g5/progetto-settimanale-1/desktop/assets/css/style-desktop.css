@@ -54,6 +54,7 @@ header img{
     padding: 2.3rem;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 #section2 img{
     border-radius: 90%;
@@ -94,6 +95,7 @@ aside{
     padding: 3rem 0rem 3rem 0rem;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 article{
     border-style: solid;
