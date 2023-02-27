@@ -179,6 +179,7 @@ footer a {
     color: fuchsia;
 }
 
+
 @media screen and (min-width:769px){
     body{ 
         font-size: 1.5rem;
@@ -196,25 +197,24 @@ footer a {
         height: 50px;
         margin-top: 0;
     }
-    header div p{
-        margin-bottom: 5rem;
-    }
     header div img{
-        display:inline;
+        display:inline-block;
     }
     header div p{
-        display: inline;
+        display: inline-block;
+        vertical-align: middle;
     }
     header div, nav{
         display: inline-block;
+        vertical-align: middle;
     }
-    header nav{
-        margin-left: 400px;
-        text-align: end
-
-    }
+  header nav{
+    float: right;
+    display: inline-block;
+  }
+  
     header ul li{
-        display: inline;
+        display: inline-block;
     }
     table{
         margin-top: 5rem;
@@ -224,15 +224,15 @@ footer a {
         font-size: 1.2rem;
     }
     iframe{
-        height: 200px;
         width: 560px;
-        margin: 0;
-
+        height: 300px;
     }
     article section{
         width: 560px;
-        margin: 0;
-        margin-top: -10rem;
+        height: 300px;
+    }
+    section, iframe{
+        margin-inline: auto;
     }
     section h2{
         font-size: 1.3rem;
@@ -241,6 +241,15 @@ footer a {
     }
     iframe, section{
         display: inline-block;
+        vertical-align: middle;
+    }
+    aside{
+        margin-inline: auto;
+    }
+    
+    aside div{ 
+        display: inline-block;
+        width: 370px;
     }
 
 }
@@ -325,5 +334,29 @@ footer a {
     }
     iframe{
         height: 125px;
+    }
+}
+
+@media print {
+    body{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+    header{
+        display: none;
+    }
+    main{
+        box-shadow: none;
+    }
+    iframe{
+        display: none;
+    }
+    section{
+        display: none;
+    }
+    aside{
+        display: none;
+    }
+    footer{
+        display: none;
     }
 }
