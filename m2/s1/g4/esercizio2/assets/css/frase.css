@@ -23,7 +23,7 @@ i {
     left: 80%;
     transform: translate(-50%);
     opacity: 0;
-    animation: animazioneParole 9s infinite;
+    animation: animazioneParole 11s infinite;
 }
 
 .parola1 {
@@ -31,11 +31,11 @@ i {
 }
 
 .parola2 {
-    animation-delay: 3s;
+    animation-delay: 5s;
 }
 
 .parola3 {
-    animation-delay: 6s;
+    animation-delay: 8s;
 }
 
 @keyframes animazioneParole {
@@ -43,11 +43,11 @@ i {
         opacity: 0;
         transform: translate(-50%, -40px);
     }
-    10% {
+    25% {
         opacity: 1;
         transform: translate(-50%, 0);
     }
-    20% {
+    50% {
         opacity: 0;
         transform: translate(-50%, 40px);
     }
