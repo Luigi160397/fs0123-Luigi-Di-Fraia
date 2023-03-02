@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300;400&display=swap');
+
+body{
+    font-family: 'Shantell Sans', cursive;
+    background-color: #666666;
+}
+
+#lavagna{
+    padding-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    gap: 90px;
+}
+
+.post{
+    width: 250px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.466);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.603), rgba(252, 248, 248, 0.13));
+    transform: scale(1);
+    transition: transform 400ms, box-shadow 400ms;
+    cursor: pointer;
+}
+
+.post:hover{
+    transform: scale(1.3);
+    box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.637);
+}
+
+.title{
+    font-weight: bold;
+    font-size: 2.3rem;
+}
+
+.text{
+    font-size: 1.3rem;
+}
+
+.postit1{
+    background-color: #fefecc;
+    transform: rotate(356deg);
+    opacity: 0;
+    animation: appear 1000ms ease-in-out 0.3s forwards;
+}
+
+.postit2{
+    background-color: #cafaca;
+    transform: rotate(8deg);
+    opacity: 0;
+    animation: appear 1000ms ease-in-out 0.6s forwards;
+}
+
+.postit3{
+    background-color: #cacafa;
+    transform: rotate(352deg);
+    opacity: 0;
+    animation: appear 1000ms ease-in-out 0.9s forwards;
+}
+
+.postit4{
+    background-color: #cafaca;
+    transform: rotate(12deg);
+    opacity: 0;
+    animation: appear 1000ms ease-in-out 0.7s forwards;
+}
+
+.postit5{
+    background-color: #fefecc;
+    transform: rotate(356deg);
+    opacity: 0;
+    animation: appear 1000ms ease-in-out 0.5s forwards;
+}
+
+.postit6{
+    background-color: #cacafa;
+    transform: rotate(354deg);
+    opacity: 0;
+    animation: appear 1000ms ease-in-out 1s forwards;
+}
+
+.postit7{
+    background-color: #fefecc;
+    transform: rotate(357deg);
+    opacity: 0;
+    animation: appear 1000ms ease-in-out 0.4s forwards;
+}
+
+.postit8{
+    background-color: #cafaca;
+    transform: rotate(6deg);
+    opacity: 0;
+    animation: appear 1000ms ease-in-out 0.6s forwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
