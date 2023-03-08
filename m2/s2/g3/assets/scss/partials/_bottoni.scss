@@ -1,0 +1,16 @@
+@each $key, $value in $bottoni {
+  .bottone-#{$key} {
+    background-color: $value;
+    color: $testo;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+    &:hover {
+      background-color: $testo;
+      color: $value;
+      border: 1px solid $value;
+    }
+  }
+}

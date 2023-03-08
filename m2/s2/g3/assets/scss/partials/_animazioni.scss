@@ -1,0 +1,7 @@
+@mixin fade-in($nome, $durata:1s, $fine:forwards, $delay:0.1s){
+    opacity: 0;
+    transform: translateY(0);
+    animation: $nome $durata $fine;
+    animation-delay: $delay;
+    
+}

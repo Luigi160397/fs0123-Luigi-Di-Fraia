@@ -1,0 +1,11 @@
+@mixin floating($border-radius:10px, $box-shadow: 0 10px 20px, $border:none){
+    border: $border;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+};
+
+@mixin grid($nrow){
+    display: grid;
+    grid-template-columns: repeat($nrow, 1fr);
+    grid-gap: 0.5rem;
+}
