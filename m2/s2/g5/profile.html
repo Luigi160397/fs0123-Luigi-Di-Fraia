@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix - Edit Profile</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+  </head>
+  <body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg bg-dark sticky-top px-3" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/netflix_logo.png" alt="logo-netflix" width="90px" />
+        </a>
+      </div>
+    </nav>
+    <main class="d-flex justify-content-center pt-5">
+      <div class="d-flex flex-column px-4">
+        <h1 class="fw-normal">Edit Profile</h1>
+        <div>
+          <div class="row row-cols-2 py-3 border border-start-0 border-end-0 mb-4">
+            <div class="col-4">
+              <div class="position-relative">
+                <img class="img-fluid" src="assets/avatar.png" alt="avatar" width="130px" />
+                <i style="top:90px; left:10px; cursor: pointer;" class="bg-dark px-1 rounded-circle border border-1 borde bi bi-pencil-fill position-absolute shadow-lg"></i>
+              </div>
+            </div>
+            <div class="col-8">
+              <p class="bg-secondary py-1 px-2">Strive Student</p>
+              <div class="form-group">
+                <label for="genre-select" class="form-label text-white">Language:</label>
+                <select style="width: 120px" class="form-select bg-dark text-white" id="genre-select">
+                  <option disabled selected>-</option>
+                  <option value="1">English</option>
+                  <option value="2">Italian</option>
+                  <option value="3">Spanish</option>
+                  <option value="4">German</option>
+                </select>
+              </div>
+              <hr class="border border-1 border-light" />
+
+              <p>Maturity Settings:</p>
+              <div><span class="badge text-bg-secondary radius-1">ALL MATURITY SETTINGS</span></div>
+              <p style="font-size: 0.8rem">Show titles of all maturity ratings for this profile.</p>
+
+              <button type="button" class="btn btn-outline-secondary px-3">EDIT</button>
+              <hr class="border border-1 border-light" />
+              <p>Autoplay controls</p>
+              <div class="form-check">
+                <input
+                  class="form-check-input bg-transparent border-1 border-light rounded-0"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckChecked"
+                  checked
+                />
+                <label class="form-check-label" style="font-size: 0.7rem" for="flexCheckChecked">
+                  Autoplay previews while browsing on all devices.
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input bg-transparent border-1 border-light rounded-0"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckChecked"
+                  checked
+                />
+                <label class="form-check-label" style="font-size: 0.7rem" for="flexCheckChecked">
+                  Autoplay previews while browsing on all devices.
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex gap-3 text-nowrap">
+          <a href="index.html" type="button" class="fw-bold btn btn-light px-3">SAVE</a>
+          <a href="index.html" type="button" class="fw-bold btn btn-outline-secondary px-3">CANCEL</a>
+          <a href="index.html" type="button" class="fw-bold btn btn-outline-secondary px-3">DELETE PROFILE</a>
+        </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
