@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registra il tuo animale</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-dark text-light">
+    <div id="contenuto" class="d-flex flex-column justify-content-center align-items-center">
+      <h1 class="pt-5 pb-3">Registra il tuo animale:</h1>
+      <form class="form">
+        <div class="pt-3">
+          <label class="text-nowrap form-label" for="petName">Pet Name:</label>
+          <input class="form-control bg-secondary w-75" type="text" name="petName" id="petName" placeholder="Write Pet Name" />
+        </div>
+        <div class="pt-3">
+          <label class="text-nowrap form-label" for="ownerName">Owner Name:</label>
+          <input class="form-control bg-secondary w-75" type="text" name="ownerName" id="ownerName" placeholder="Write Owner" />
+        </div>
+        <div class="pt-3">
+          <label class="text-nowrap form-label" for="species">Pet Species:</label>
+          <input class="form-control bg-secondary w-75" type="text" name="species" id="species" placeholder="Write Pet Species" />
+        </div>
+        <div class="pt-3">
+          <label class="text-nowrap form-label" for="breed">Pet Breed:</label>
+          <input class="form-control bg-secondary w-75" type="text" name="breed" id="breed" placeholder="Write Pet Breed" />
+        </div>
+        <button class="btn btn-outline-secondary ms-5 mt-3 mb-3">Save</button>
+    </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script/script.js"></script>
+  </body>
+</html>
