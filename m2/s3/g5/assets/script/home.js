@@ -29,15 +29,15 @@ const createCard = (name, brand, imgUrl, price, id) => {
   row.appendChild(col);
 
   col.innerHTML = `<div class="card shadow">
-  <img style="object-fit: cover; object-position: center;
+  <img style="object-fit: cover; object-position: top;
   height: 200px;" src="${imgUrl}"  class="card-img-top img-fluid" alt="card-pic" />
   <div class="card-body text-center">
-    <h5 class="card-title">${name}</h5>
-    <p class="card-text">${brand}</p>
-    <p class="card-text">${price}€</p>
+    <h5 class="card-title text-capitalize">${name}</h5>
+    <p class="card-text text-capitalize">${brand}</p>
+    <p class="card-text text-capitalize">${price}€</p>
     <div class="d-flex justify-content-center gap-2">
-      <a href="detail.html?id=${id}" class="btn btn-primary text-nowrap">Scopri di più</a>
-      <a href="backoffice.html?id=${id}" class="btn btn-outline-primary">Modifica</a>
+      <a href="detail.html?id=${id}" class="btn btn-success text-nowrap">Scopri di più</a>
+      <a href="backoffice.html?id=${id}" class="btn btn-outline-success">Modifica</a>
     </div>
   </div>
 </div>`;

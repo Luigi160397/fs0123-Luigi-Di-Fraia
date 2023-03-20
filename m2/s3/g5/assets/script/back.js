@@ -32,45 +32,74 @@ window.onload = () => {
       .catch(error => console.log(error));
   }
 };
+
+const form = document.getElementById("product-form");
+
+const showErrorModal = errorMessage => {
+  const errorModal = new bootstrap.Modal(document.getElementById("error-modal"));
+  const errorModalText = document.getElementById("error-modal-text");
+  errorModalText.textContent = errorMessage;
+  errorModal.show();
+};
+
 const gestisciSubmit = event => {
   event.preventDefault();
-  const newProduct = {
-    name: document.getElementById("name").value,
-    description: document.getElementById("description").value,
-    brand: document.getElementById("brand").value,
-    imageUrl: document.getElementById("imgUrl").value,
-    price: document.getElementById("price").value
-  };
-  fetch(endpoint, {
-    method: method,
-    body: JSON.stringify(newProduct),
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json"
-    }
-  }).catch(error => console.log(error));
+  if (form.checkValidity()) {
+    const newProduct = {
+      name: document.getElementById("name").value,
+      description: document.getElementById("description").value,
+      brand: document.getElementById("brand").value,
+      imageUrl: document.getElementById("imgUrl").value,
+      price: document.getElementById("price").value
+    };
+    fetch(endpoint, {
+      method: method,
+      body: JSON.stringify(newProduct),
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          window.location.href = "index.html";
+        } else {
+          throw new Error("Errore durante la creazione/modifica del prodotto");
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        showErrorModal(error.message);
+      });
+  } else {
+    form.classList.add("was-validated");
+  }
 };
 
 const cancellaProdotto = () => {
-  const hasAccepted = confirm("Vuoi eliminare l'articolo?");
-  if (hasAccepted) {
+  const confirmModal = new bootstrap.Modal(document.getElementById("confirm-modal"), {
+    keyboard: false
+  });
+  confirmModal.show();
+  const confirmDeleteButton = document.getElementById("confirm-delete");
+  confirmDeleteButton.addEventListener("click", () => {
+    confirmModal.hide();
     fetch(endpoint, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`
       }
     })
-      .then(res => {
-        if (res.ok) {
-          alert("Articolo eliminato con successo");
+      .then(response => {
+        if (response.ok) {
           window.location.href = "index.html";
         } else {
           throw new Error("Errore durante l'eliminazione dell'articolo");
         }
       })
-      .catch(err => {
-        console.log(err);
-        alert("Si è verificato un errore durante l'eliminazione dell'articolo");
+      .catch(error => {
+        console.log(error);
+        showErrorModal(error.message);
       });
-  }
+  });
 };

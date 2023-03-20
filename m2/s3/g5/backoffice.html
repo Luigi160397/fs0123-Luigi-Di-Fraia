@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Back-office</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <title>PhoneStorage - Back-office</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,7 +14,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary px-3">
+    <nav style="top: 0; z-index: 9999" class="navbar navbar-expand-lg bg-body-tertiary px-3 position-sticky">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
           <img width="50px" src="assets/img/logo.png" alt="logo" />
@@ -32,47 +33,91 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center justify-content-center">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" aria-current="page" href="index.html">PhoneStorage</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="container pt-5">
+    <div class="container pt-4 pb-4">
       <h2 id="titolo" class="pb-3 display-4">Crea un nuovo Prodotto</h2>
 
-      <form onsubmit="gestisciSubmit(event)">
+      <form id="product-form" onsubmit="gestisciSubmit(event)" novalidate class="needs-validation p-4 pt-0">
         <div class="mb-3">
           <label for="name" class="form-label">Nome del prodotto:</label>
           <input type="text" class="form-control" id="name" required />
+          <div class="invalid-feedback">Inserisci il nome del prodotto</div>
         </div>
         <div class="mb-3">
           <label for="brand" class="form-label">Brand del prodotto:</label>
           <input type="text" class="form-control" id="brand" required />
+          <div class="invalid-feedback">Inserisci il brand del prodotto</div>
         </div>
         <div class="mb-3">
           <label for="imgUrl" class="form-label">URL dell'immagine del prodotto:</label>
           <input type="text" class="form-control" id="imgUrl" required />
+          <div class="invalid-feedback">Inserisci l'URL dell'immagine del prodotto</div>
         </div>
         <div class="mb-3">
           <label for="price" class="form-label">Prezzo del prodotto:</label>
           <input type="text" class="form-control" id="price" required />
+          <div class="invalid-feedback">Inserisci il prezzo del prodotto</div>
         </div>
         <div class="mb-3">
           <label for="description" class="form-label">Descrizione del prodotto:</label>
           <textarea class="form-control" id="description" rows="3" required></textarea>
+          <div class="invalid-feedback">Inserisci la descrizione del prodotto</div>
         </div>
 
         <div class="d-flex justify-content-around">
-          <button id="create" type="submit" class="btn btn-primary">Crea nuovo prodotto</button>
-          <button id="edit" type="submit" class="btn btn-success d-none">Modifica prodotto</button>
-          <button id="reset" type="reset" class="btn btn-outline-success">Reset</button>
-          <button onclick="cancellaProdotto()" id="delete" type="button" class="btn btn-danger d-none">
-            Elimina prodotto
+          <button id="create" type="submit" class="btn btn-success text-nowrap">Aggiungi</button>
+          <button id="edit" type="submit" class="btn btn-success d-none text-nowrap">Modifica</button>
+          <button id="reset" type="reset" class="btn btn-outline-success text-nowrap">Reset</button>
+          <button onclick="cancellaProdotto()" id="delete" type="button" class="btn btn-danger d-none text-nowrap">
+            Elimina
           </button>
         </div>
       </form>
+    </div>
+
+    <footer class="d-flex justify-content-center align-items-center bg-body-tertiary py-4">
+      <p class="py-4 text-secondary">©PhoneStorage - 2023</p>
+    </footer>
+
+    <div class="modal fade" id="error-modal" tabindex="-1" aria-labelledby="error-modal-label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="error-modal-label">Errore</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p id="error-modal-text">Si è verificato un errore</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="confirm-modal" tabindex="-1" aria-labelledby="confirm-modal-label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirm-modal-label">Conferma eliminazione</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Sei sicuro di voler eliminare l'articolo?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+            <button type="button" class="btn btn-danger" id="confirm-delete">Elimina</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script
