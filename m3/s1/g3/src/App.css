@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+#image-card {
+  object-fit: cover;
+  object-position: top;
+  height: 200px;
+  width: 100%;
+}
+
+.libri {
+  width: 200px;
+}
