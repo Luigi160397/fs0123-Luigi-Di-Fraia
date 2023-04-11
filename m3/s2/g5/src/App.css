@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+#infoCard {
+  height: 200px;
+}
+
+#forecast {
+  height: 300px;
+  overflow: auto;
+}
+
+#forecast::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0.336);
+  width: 12px;
+}
+
+#forecast::-webkit-scrollbar-thumb {
+  background-color: rgb(240, 240, 240);
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  #forecast::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body {
+  background-image: url("https://img.wallpapic.it/i7994-731-815/medium/nuvole-blu-luce-luna-sfondo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Roboto", sans-serif;
+}
+
+.home {
+  height: 900px;
+  text-align: center;
+}
+
+.titolo {
+  font-size: 6rem !important;
+}
+
+.cerca {
+  width: 350px;
+  font-size: 2rem;
+}
+
+.card,
+.list-group-item,
+canvas {
+  background: rgba(255, 255, 255, 0.336);
+  backdrop-filter: blur(10px);
+}
+
+.titoloMain {
+  font-weight: 400;
+}
