@@ -1,0 +1,17 @@
+.nav-link span {
+  font-size: 12px;
+}
+
+body {
+  background-color: black;
+}
+
+#posts::-webkit-scrollbar {
+  background-color: black;
+  width: 10px;
+}
+
+#posts::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 5px;
+}
